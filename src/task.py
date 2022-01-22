@@ -28,6 +28,10 @@ class Task_Schema(ma.Schema):
 task_schema = Task_Schema()
 tasks_schema = Task_Schema(many=True)
 
+
+
+# Endpoints
+
 @app.route('/task',methods=['POST'])
 def create_task():
     title = request.json.get('title')
@@ -38,6 +42,9 @@ def create_task():
     db.session.commit()
 
     return task_schema.jsonify(new_task)
+    
+
+# Execute
 
 if __name__ == "__main__":
     app.run(debug = True)
