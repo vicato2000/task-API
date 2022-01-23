@@ -1,5 +1,6 @@
 from flask_marshmallow import Schema
 
+
 class Task_Schema(Schema):
     class Meta:
         fields = ("task_id", "title", "description")
