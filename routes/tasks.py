@@ -1,9 +1,11 @@
 from flask import Blueprint, request
+
+from models.schemas.task_schema import task_schema
 from models.task import Task
 from utils.db import db
-from models.schemas.task_schema import tasks_schema, task_schema
 
 tasks = Blueprint("tasks", __name__)
+
 
 @tasks.route("/new", methods=["POST"])
 def create_task():
